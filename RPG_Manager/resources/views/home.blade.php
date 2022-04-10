@@ -1,142 +1,110 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.main')
 
-        <title>Home</title>
+@section('home', 'header-red-home')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+@section('title', 'Home')
+    
+@section('dice-home')
+    
+    <div class="container hero">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                <h1>The revolution is here.</h1>
+                <p>Mauris egestas tellus non ex condimentum, ac ullamcorper sapien dictum. Nam consequat neque quis sapien viverra convallis. In non tempus lorem. </p>
+                <a href="/about_sheet"><button class="btn btn-light btn-lg action-button" type="button">Learn More</button></a>
+            </div>
+            <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
+                <div class="dice-mockup"><img src="/images/d20loko.png" class="dice">
+                    <div class="screen"></div>
+            </div>
+        </div>
+    </div>
 
-        {{-- Links estilos--}}
-        <link rel="stylesheet" href="/css/styles.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+@endsection
+
+    
+
+@section('content')
+{{-- Cards --}}
+  <div class="container">
+    <div class="row pt-5 m-auto">
+      <div class="col-md-6 col-lg-4 pb-3">
+
+        <!-- Copy the content below until next comment -->
+        <div class="card card-custom bg-white border-white border-0">
+          <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Card has minimum height set but will expand if more space is needed for card body content. You can use Bootstrap <a href="https://getbootstrap.com/docs/4.0/components/card/#card-decks" target="_blank">card-decks</a> to align multiple cards nicely in a row.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Option</a>
+            <a href="#" class="btn btn-outline-primary">Other option</a>
+          </div>
+        </div>
         
-        {{-- Links Js --}}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <!-- Copy until here -->
 
-    </head>
-<body>
-    <header>
-        <div>
-            <div class="header-red">
-                <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-                    <div class="container">
-                        <img src="/images/logo.png" alt="Logo RPG_Manager" class="navbar-logo">
-                        <a class="navbar-brand" href="#">RPG Manager</a>
-                        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
-                            <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navcol-1">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" href="#">Link</a>
-                                </li>
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
-                                    <div class="dropdown-menu" role="menu">
-                                        <a class="dropdown-item" role="presentation" href="#">First Item</a>
-                                        <a class="dropdown-item" role="presentation" href="#">Second Item</a>
-                                        <a class="dropdown-item" role="presentation" href="#">Third Item</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <form class="form-inline mr-auto" target="_self">
-                                <div class="form-group">
-                                    <label for="search-field">
-                                        <i class="fa fa-search"></i>
-                                    </label>
-                                    <input class="form-control search-field" type="search" name="search" id="search-field" placeholder="Pesquise por mesas">
-                                </div> 
-                            </form>
+      </div>
+      <div class="col-md-6 col-lg-4 pb-3">
 
-                            <span class="navbar-text"> 
-                                <a href="#" class="login">Log In</a>
-                            </span>
-                            <a class="btn btn-light action-button" role="button" href="#">Sign Up</a>
-                        </div>
-                    </div>
-                </nav>
-                <div class="container hero">
-                    <div class="row">
-                        <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-                            <h1>The revolution is here.</h1>
-                            <p>Mauris egestas tellus non ex condimentum, ac ullamcorper sapien dictum. Nam consequat neque quis sapien viverra convallis. In non tempus lorem. </p><button class="btn btn-light btn-lg action-button" type="button">Learn More</button></div>
-                        <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
-                            {{-- <div class="iphone-mockup"><img src="assets/img/iphone.svg" class="device"> --}}
-                                <div class="screen"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="card card-custom bg-white border-white border-0">
+          <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Card has minimum height set but will expand if more space is needed for card body content. You can use Bootstrap <a href="https://getbootstrap.com/docs/4.0/components/card/#card-decks" target="_blank">card-decks</a> to align multiple cards nicely in a row.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Option</a>
+            <a href="#" class="btn btn-outline-primary">Other option</a>
+          </div>
         </div>
-        </div>
-    </header>
-    <main>
+        
+      </div>
+      <div class="col-md-6 col-lg-4 pb-3">
 
-    </main>
-    <footer>
-        <footer class="site-footer">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <h6>About</h6>
-                  <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
-                </div>
-      
-                <div class="col-xs-6 col-md-3">
-                  <h6>Categories</h6>
-                  <ul class="footer-links">
-                    <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-                    <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-                    <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-                    <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-                    <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-                    <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
-                  </ul>
-                </div>
-      
-                <div class="col-xs-6 col-md-3">
-                  <h6>Quick Links</h6>
-                  <ul class="footer-links">
-                    <li><a href="http://scanfcode.com/about/">About Us</a></li>
-                    <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-                    <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
-                  </ul>
-                </div>
-              </div>
-              <hr>
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                  <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
-                  <a href="#">Scanfcode</a>.
-                  </p>
-                </div>
-      
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <ul class="social-icons">
-                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
-                  </ul>
-                </div>
-              </div>
-            </div>
-      </footer>
-    </footer>
-</body>
+        <div class="card card-custom bg-white border-white border-0">
+          <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Card has minimum height set but will expand if more space is needed for card body content. You can use Bootstrap <a href="https://getbootstrap.com/docs/4.0/components/card/#card-decks" target="_blank">card-decks</a> to align multiple cards nicely in a row.</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-primary">Option</a>
+            <a href="#" class="btn btn-outline-primary">Other option</a>
+          </div>
+        </div>
+        
+      </div> 
+    </div>
+  </div>
+  {{-- Menu css --}}
+  <div class="Container-Menu">
+    <ul class="Menu-CSS">
+      <li style="--clr:#00ade1">
+        <a href="#" data-text="&nbsp;Home">&nbsp;Home</a>
+      </li>
+      <li style="--clr:#ff6493">
+        <a href="#" data-text="&nbsp;About">&nbsp;About</a>
+      </li>
+      <li style="--clr:#ffdd1c">
+        <a href="#" data-text="&nbsp;Services">&nbsp;Services</a>
+      </li>
+      <li style="--clr:#00dc82">
+        <a href="#" data-text="&nbsp;Team">&nbsp;Team</a>
+      </li>
+      <li style="--clr:#dc00d4">
+        <a href="#" data-text="&nbsp;Contact">&nbsp;Contact</a>
+      </li>
+    </ul>
+  </div>
+@endsection     
